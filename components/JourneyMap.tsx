@@ -8,6 +8,8 @@ import {
   Popup,
 } from "react-leaflet";
 
+import type { LatLngExpression } from "leaflet";
+
 import {
   journeySegments,
   getDistanceWalkedKm,
@@ -19,11 +21,12 @@ import {
 import "leaflet/dist/leaflet.css";
 
 export default function JourneyMap() {
+  const center: LatLngExpression = [41.0082, 28.9784];
   return (
     <div className="relative h-[calc(100vh-280px)] w-full">
       {" "}
       <MapContainer
-        center={[41.0082, 28.9784]}
+        center={center}
         zoom={4}
         style={{
           height: "100%",
