@@ -24,8 +24,16 @@ export default function SupportPage() {
       </section>
 
       <section className="mb-24 max-w-2xl">
-        <p className="mt-8 text-lg leading-relaxed text-gray-400">
-          If you'd like to help me continue the journey, you can do so below.
+        <p className="text-lg leading-relaxed text-gray-400">
+          For over {daysWalking} days I've been walking from Manchester to Kenya, documenting every border crossed, camp pitched and kilometre travelled.
+        </p>
+
+        <p className="mt-6 text-lg leading-relaxed text-gray-400">
+          Support helps cover the reality of life on the road: food, accommodation when wild camping isn't possible, replacing worn gear, internet access and the equipment used to share the journey.
+        </p>
+
+        <p className="mt-6 text-lg leading-relaxed text-gray-400">
+          If you've enjoyed following the expedition and would like to help keep it moving forward, you can support it below.
         </p>
       </section>
 
@@ -46,14 +54,6 @@ export default function SupportPage() {
         </div>
       </div>
 
-      <section className="mb-24">
-        <p className="mb-6 text-sm uppercase tracking-[0.3em] text-amber-500">
-          Current Location
-        </p>
-
-        <h2 className="text-5xl font-light">Istanbul, Türkiye</h2>
-      </section>
-
       <section className="mb-32">
         <h2 className="mb-8 text-4xl font-light">Support The Journey</h2>
 
@@ -68,7 +68,7 @@ export default function SupportPage() {
               <p className="text-3xl font-light">☕ Buy Me A Coffee</p>
 
               <p className="mt-2 text-gray-400">
-                Help keep me moving one step at a time.
+                Quick one-off support for the expedition.
               </p>
             </div>
 
@@ -85,7 +85,7 @@ export default function SupportPage() {
               <p className="text-3xl font-light">💸 PayPal</p>
 
               <p className="mt-2 text-gray-400">
-                The simplest way to contribute directly.
+                Directly support the walk.
               </p>
             </div>
 
@@ -96,7 +96,7 @@ export default function SupportPage() {
             <p className="text-3xl font-light">₿ Bitcoin</p>
 
             <p className="mt-2 text-gray-400">
-              Support the expedition with Bitcoin.
+              Support the walk using Bitcoin.
             </p>
 
             <p className="mt-6 break-all font-mono text-sm">

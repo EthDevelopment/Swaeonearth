@@ -5,6 +5,7 @@ export default function Navbar() {
     <nav className="flex items-center justify-between">
       <div className="flex gap-6 text-sm">
         <Link href="/">Home</Link>
+        <Link href="/charity">Charity</Link>
         <Link href="/journal">Journal</Link>
         <Link href="/journey">Journey</Link>
         <Link href="/gear">Gear</Link>
