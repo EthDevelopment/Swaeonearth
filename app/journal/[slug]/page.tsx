@@ -1,6 +1,7 @@
-import { getPostBySlug } from "@/lib/posts";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
+import Link from "next/link";
+import { getPostBySlug, getAdjacentPosts } from "@/lib/posts";
 
 export default async function PostPage({
   params,
@@ -10,6 +11,8 @@ export default async function PostPage({
   const { slug } = await params;
 
   const post = getPostBySlug(slug);
+
+  const { previous, next } = getAdjacentPosts(slug);
 
   return (
     <article className="mx-auto max-w-2xl py-20">
@@ -36,6 +39,29 @@ export default async function PostPage({
       <div className="prose prose-lg max-w-none prose-headings:font-light prose-p:text-gray-700 prose-p:leading-8">
         {" "}
         <ReactMarkdown>{post.content}</ReactMarkdown>
+        <nav className="mt-20 flex justify-between border-t pt-8">
+          <div>
+            {previous && (
+              <Link
+                href={`/journal/${previous.slug}`}
+                className="text-sm text-gray-500 hover:text-white"
+              >
+                ← {previous.title}
+              </Link>
+            )}
+          </div>
+
+          <div>
+            {next && (
+              <Link
+                href={`/journal/${next.slug}`}
+                className="text-sm text-gray-500 hover:text-white"
+              >
+                {next.title} →
+              </Link>
+            )}
+          </div>
+        </nav>
       </div>
     </article>
   );

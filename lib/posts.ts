@@ -59,3 +59,15 @@ export function getPostBySlug(slug: string): Post {
     coverImage: data.coverImage as string | undefined,
   };
 }
+
+export function getAdjacentPosts(slug: string) {
+  const posts = getAllPosts();
+
+  const currentIndex = posts.findIndex((post: any) => post.slug === slug);
+
+  return {
+    previous: currentIndex > 0 ? posts[currentIndex - 1] : null,
+
+    next: currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null,
+  };
+}
