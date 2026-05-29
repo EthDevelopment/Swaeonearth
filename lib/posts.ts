@@ -19,7 +19,7 @@ export function getLatestPost() {
 
   return posts[0];
 }
-export function getAllPosts() {
+export function getAllPosts(): Post[] {
   const fileNames = fs.readdirSync(postsDirectory);
 
   const posts = fileNames.map((fileName) => {
@@ -33,7 +33,12 @@ export function getAllPosts() {
 
     return {
       slug,
-      ...data,
+      content: "",
+      title: data.title as string,
+      date: String(data.date),
+      excerpt: data.excerpt as string | undefined,
+      location: data.location as string | undefined,
+      coverImage: data.coverImage as string | undefined,
     };
   });
 
@@ -60,10 +65,13 @@ export function getPostBySlug(slug: string): Post {
   };
 }
 
-export function getAdjacentPosts(slug: string) {
+export function getAdjacentPosts(slug: string): {
+  previous: Post | null;
+  next: Post | null;
+} {
   const posts = getAllPosts();
 
-  const currentIndex = posts.findIndex((post: any) => post.slug === slug);
+  const currentIndex = posts.findIndex((post) => post.slug === slug);
 
   return {
     previous: currentIndex > 0 ? posts[currentIndex - 1] : null,
