@@ -20,13 +20,13 @@ import "leaflet/dist/leaflet.css";
 
 export default function JourneyMap() {
   return (
-    <div className="relative overflow-hidden rounded-3xl border">
+    <div className="relative h-[calc(100vh-280px)] w-full">
       {" "}
       <MapContainer
         center={[41.0082, 28.9784]}
         zoom={4}
         style={{
-          height: "700px",
+          height: "100%",
           width: "100%",
         }}
       >
