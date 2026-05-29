@@ -1,5 +1,6 @@
 import { getPostBySlug } from "@/lib/posts";
 import ReactMarkdown from "react-markdown";
+import Image from "next/image";
 
 export default async function PostPage({
   params,
@@ -11,14 +12,31 @@ export default async function PostPage({
   const post = getPostBySlug(slug);
 
   return (
-    <article className="py-16 max-w-3xl">
+    <article className="mx-auto max-w-2xl py-20">
+      <p className="text-sm uppercase tracking-widest text-gray-500 mb-4">
+        {post.location}
+      </p>
+
       <h1 className="text-5xl font-light mb-4">{post.title}</h1>
 
       <p className="text-gray-500 mb-12">
         {new Date(post.date).toLocaleDateString("en-GB")}
       </p>
 
-      <ReactMarkdown>{post.content}</ReactMarkdown>
+      {post.coverImage && (
+        <Image
+          src={post.coverImage}
+          alt={post.title}
+          width={1200}
+          height={800}
+          className="mb-8 rounded-lg"
+        />
+      )}
+
+      <div className="prose prose-lg max-w-none prose-headings:font-light prose-p:text-gray-700 prose-p:leading-8">
+        {" "}
+        <ReactMarkdown>{post.content}</ReactMarkdown>
+      </div>
     </article>
   );
 }

@@ -11,8 +11,14 @@ export type Post = {
   date: string;
   excerpt?: string;
   location?: string;
+  coverImage?: string;
 };
 
+export function getLatestPost() {
+  const posts = getAllPosts();
+
+  return posts[0];
+}
 export function getAllPosts() {
   const fileNames = fs.readdirSync(postsDirectory);
 
@@ -50,5 +56,6 @@ export function getPostBySlug(slug: string): Post {
     date: String(data.date),
     excerpt: data.excerpt as string | undefined,
     location: data.location as string | undefined,
+    coverImage: data.coverImage as string | undefined,
   };
 }

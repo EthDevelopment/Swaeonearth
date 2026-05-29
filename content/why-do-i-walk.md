@@ -4,6 +4,7 @@ date: 2026-05-29
 location: Istanbul, Türkiye
 excerpt: Reflections after 218 days on the road.
 slug: why-do-i-walk
+coverImage: /images/why-i-walk.jpg
 ---
 
 Why do I walk?
@@ -17,3 +18,16 @@ For what?
 I didn't know.
 
 All I knew was I needed time.
+
+# Why do I walk?
+
+When I set out,
+
+time is what I wanted.
+
+## Faith
+
+The word faith has taken a new meaning.
+
+- One continent crossed
+- Another waiting
