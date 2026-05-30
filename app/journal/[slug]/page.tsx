@@ -15,7 +15,7 @@ export default async function PostPage({
   const { previous, next } = getAdjacentPosts(slug);
 
   return (
-    <article className="mx-auto max-w-2xl py-20">
+    <article className="mx-auto max-w-3xl py-20">
       <p className="text-sm uppercase tracking-widest text-gray-500 mb-4">
         {post.location}
       </p>

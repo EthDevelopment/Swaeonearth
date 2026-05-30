@@ -35,13 +35,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-white text-black">
-        <div className="mx-auto max-w-4xl px-6">
-          <header className="py-8">
+        <header className="py-8">
+          <div className="mx-auto max-w-4xl px-6">
             <Navbar />
-          </header>
+          </div>
+        </header>
 
-          <main>{children}</main>
-        </div>
+        <main className="px-6">{children}</main>
+
         <Footer />
       </body>
     </html>

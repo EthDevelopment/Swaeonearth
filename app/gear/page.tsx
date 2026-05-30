@@ -13,30 +13,32 @@ export default function GearPage() {
       : gear[activeTab as keyof typeof gear] || [];
 
   return (
-    <div className="py-20">
-      <section className="mb-24">
+    <div className="mx-auto max-w-7xl px-6 min-h-[calc(100vh-140px)] py-12">
+      <section className="mb-12 max-w-3xl">
         <p className="mb-4 text-sm uppercase tracking-[0.3em] text-amber-500">
           Expedition Equipment
         </p>
 
-        <h1 className="max-w-5xl text-7xl font-light leading-tight">
-          Everything I Carry
-          <br />
-          From The United Kingdom
-          <br />
-          To Kenya
+        <h1 className="text-6xl font-light leading-tight lg:text-7xl">
+          What I carry
         </h1>
 
-        <p className="mt-8 max-w-3xl text-xl text-gray-400">
+        <p className="mt-6 text-lg text-gray-400">
           Every item has earned its place. Some keep me walking. Some keep me
           alive. Some help me tell the story.
         </p>
       </section>
 
-      <section className="overflow-hidden rounded-3xl border">
+      <section className="overflow-hidden rounded-3xl border min-h-[70vh]">
         <div className="border-b">
           <div className="flex overflow-x-auto">
-            {["walking", "shelter", "filmmaking", "technology", "hall-of-fame"].map((tab) => (
+            {[
+              "walking",
+              "shelter",
+              "filmmaking",
+              "technology",
+              "hall-of-fame",
+            ].map((tab) => (
               <button
                 key={tab}
                 onClick={() => {
@@ -62,16 +64,16 @@ export default function GearPage() {
             ))}
           </div>
         </div>{" "}
-        <div className="grid lg:grid-cols-[1.3fr_1fr]">
+        <div className="grid min-h-[70vh] lg:grid-cols-[1fr_1.1fr]">
           {" "}
-          <div className="bg-zinc-900 p-10">
+          <div className="flex flex-col bg-zinc-900 p-8 lg:p-10 overflow-y-auto">
             {selectedItem?.image && (
               <Image
                 src={selectedItem.image}
                 alt={selectedItem.name}
                 width={1200}
                 height={1200}
-                className="mb-6 h-[350px] w-full rounded-2xl object-cover"
+                className="mb-6 h-[260px] lg:h-[320px] w-full rounded-2xl object-cover"
               />
             )}
 
@@ -114,7 +116,7 @@ export default function GearPage() {
               </a>
             </div>
           </div>
-          <div className="p-12">
+          <div className="p-8 lg:p-10 overflow-y-auto">
             <p className="mb-4 text-sm uppercase tracking-widest text-amber-500">
               {activeTab}
             </p>

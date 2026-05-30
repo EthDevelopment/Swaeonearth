@@ -6,7 +6,7 @@ export default function JournalPage() {
   const posts = getAllPosts();
 
   return (
-    <div className="py-16">
+    <div className="mx-auto max-w-3xl py-16">
       <h1 className="text-5xl font-light">Journal</h1>
 
       <div className="mt-12 space-y-8">

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function CharityPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-20">
+    <div className="mx-auto max-w-3xl py-20">
       <section className="mb-24">
         <p className="mb-4 text-sm uppercase tracking-[0.3em] text-amber-500">
           Walking For A Cause
